@@ -47,8 +47,8 @@ alias udump="cd $ORACLE_BASE/admin/$ORACLE_SID/udump"
 alias bdump="cd $ORACLE_BASE/admin/$ORACLE_SID/bdump"
 alias sqlplus="rlwrap sqlplus"
 
+EOF
+
+
 #gunzip 1.10201_database_linux_x86_64.cpio.gz
 #cpio -idmv < 1.10201_database_linux_x86_64.cpio 
-
-
-EOF

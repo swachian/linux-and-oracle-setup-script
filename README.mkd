@@ -1,2 +1,5 @@
 - config.sh
 适用于redhat6，属于os装完后的基本配置
+
+- oracle_install_prepare.sh
+适用于oracle10g，安装相关的包，设置相应的环境变量
