@@ -1,0 +1,2 @@
+- config.sh
+适用于redhat6，属于os装完后的基本配置
