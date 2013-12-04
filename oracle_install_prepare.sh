@@ -5,7 +5,7 @@ yum install  openmotif-2*  compat-db-4*
 
 yum install -y libXp-devel.i686  libXt.i686 libXtst.i686 compat-gcc* compat-glibc* compat-libstd* glibc-devel.i686 libaio-devel.i686
 
-yum install rlwrap
+yum install ntp lrzsz
 
 groupadd oinstall
 groupadd dba
@@ -20,7 +20,7 @@ chown -R oracle.oinstall /u01
 echo "Red Hat Enterprise Linux AS release 4 (Nahant Update 4)" > /etc/redhat-release
 
 
-cat >> /home/oracle/.bash_profile <<EOF
+cat >> /home/oracle/.bash_profile <<"EOF"
 TMP=/tmp; export TMP
 TMPDIR=$TMP; export TMPDIR
 
