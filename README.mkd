@@ -3,3 +3,14 @@
 
 - oracle_install_prepare.sh
 适用于oracle10g，安装相关的包，设置相应的环境变量
+
+- oracle-post-config.sh 安装成功后需要执行的内容，包括tns文件的复制
+
+0. 预先执行config.sh，实现基本的参数设置和服务设定
+1. 执行oracle_install_prepare.sh，包括yum安装各类包，rlwrap的源码安装
+2. /etc/hosts文件修改
+3. 安装oracle10.2.0.1
+4. 执行oracle-post-config.sh，包括tns文件的拷贝
+5. 打补丁10.2.0.5
+6. 测试
+
