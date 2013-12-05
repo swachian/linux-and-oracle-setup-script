@@ -33,7 +33,7 @@ TMPDIR=$TMP; export TMPDIR
 
 ORACLE_BASE=/u01/app/oracle; export ORACLE_BASE
 ORACLE_HOME=$ORACLE_BASE/product/10.2.0/db_1; export ORACLE_HOME
-ORACLE_SID=udb; export ORACLE_SID
+ORACLE_SID=sid; export ORACLE_SID
 ORACLE_TERM=xterm; export ORACLE_TERM
 PATH=/usr/sbin:$PATH; export PATH
 PATH=$ORACLE_HOME/bin:$PATH; export PATH
