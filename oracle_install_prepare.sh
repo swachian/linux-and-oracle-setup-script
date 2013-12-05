@@ -1,11 +1,18 @@
+mount /dev/sr0  /media/CentOS_6.4_Final
+
+rm -rf /etc/yum.repos.d/*
+scp db01:/etc/yum.repos.d/* /etc/yum.repos.d/
+
+rm -rf rlwrap-0.37
+tar -zxvf rlwrap-0.37.tar.gz
+cd rlwrap-0.37 && ./configure && make && make install
+
 echo "session    required     pam_limits.so" >> /etc/pam.d/login
 
 yum install compat-libstdc++-33-3*  compat-gcc-34-3*  compat-gcc-34-c++-3*  gcc-4*  libXp-1*
 yum install  openmotif-2*  compat-db-4*
 
 yum install -y libXp-devel.i686  libXt.i686 libXtst.i686 compat-gcc* compat-glibc* compat-libstd* glibc-devel.i686 libaio-devel.i686
-
-yum install ntp lrzsz
 
 groupadd oinstall
 groupadd dba
@@ -49,6 +56,6 @@ alias sqlplus="rlwrap sqlplus"
 
 EOF
 
-
 #gunzip 1.10201_database_linux_x86_64.cpio.gz
 #cpio -idmv < 1.10201_database_linux_x86_64.cpio 
+
