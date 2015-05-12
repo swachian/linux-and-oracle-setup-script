@@ -1,8 +1,8 @@
-# system及sysaux的表空间，查询空闲百分比时，总是显示的比较小。
-# 研究一番可以发现，其实并无害处，因为表空间对应的数据文件是自动增长的，只是每次增长的数据极小，大约是1280*8192B，即每次只增加1MB，因此最终总是会出现空闲率不及1%的情况
-# 最简单的办法就是调整每次扩大的值，这样就可以提升扩展后的空闲率
+system及sysaux的表空间，查询空闲百分比时，总是显示的比较小。
+研究一番可以发现，其实并无害处，因为表空间对应的数据文件是自动增长的，只是每次增长的数据极小，大约是1280*8192B，即每次只增加1MB，因此最终总是会出现空闲率不及1%的情况
+最简单的办法就是调整每次扩大的值，这样就可以提升扩展后的空闲率
 
-# 查询表空间是否自增长，最大允许的字节数等信息
+### 查询表空间是否自增长，最大允许的字节数等信息
 
 `select tablespace_name,file_name, AUTOEXTENSIBLE,bytes,maxbytes, INCREMENT_BY from dba_data_files;`
 
@@ -20,14 +20,14 @@ DATA1            /home/oracle/oradata/ngn/data1.dbf                             
 
 160,12800是指每次增加的block数量，通常一个block有8192个字节
 
-# 调整每次增长的大小
+### 调整每次增长的大小
 
 ```bash
 alter database datafile '/home/oracle/oradata/ngn/system01.dbf' autoextend on next 500m;
 alter database datafile '/home/oracle/oradata/ngn/sysaux01.dbf' autoextend on next 500m;
 ```
 
-# 查看表空间的比例状况
+### 查看表空间的比例状况
 
 ```
 select dbf.tablespace_name,
