@@ -13,6 +13,10 @@ yum install compat-libstdc++-33-3*  compat-gcc-34-3*  compat-gcc-34-c++-3*  gcc-
 yum install  openmotif-2*  compat-db-4*
 
 yum install -y libXp-devel.i686  libXt.i686 libXtst.i686 compat-gcc* compat-glibc* compat-libstd* glibc-devel.i686 libaio-devel.i686
+yum install libXp.i686 libXp-devel.i686 libXt.i686 libXt-devel.i686 libXtst.i686 libXtst-devel.i686 make.x86_64 gcc.x86_64 libaio.x86_64 glibc-devel.i686 libgcc.i686
+glibc-devel.x86_64 compat-libstdc++-33 -y
+yum install glibc* gcc* make* compat-db* libstdc* libXp* libXtst* compat-libstdc++* -y
+
 
 groupadd oinstall
 groupadd dba
